@@ -17,3 +17,12 @@ exports.getDay = (aDate) => {
   var momentString = moment(aDate).format("ddd, MMM Do");
   return momentString;
 }
+
+exports.getDateTime = (aDate) => {
+  var momentString = moment(aDate).format("MMM DD, h:k a");
+  return momentString;
+}
+//
+// exports.getDateTime = (aDate) => {
+//   return aDate;
+// }

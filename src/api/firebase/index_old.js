@@ -3,26 +3,20 @@ import firebase from 'firebase';
 console.log("process.env.NODE_ENV", process.env.NODE_ENV);
 console.log("authDomain", process.env.REACT_APP_AUTH_DOMAIN);
 
-var config = (process.env.NODE_ENV === 'development') ? {
-  apiKey: 'AIzaSyAF5pJIIeGCnKGM2GZKDga2DuJg2aeEp-4',
-  authDomain: 'footytips-dev.firebaseapp.com',
-  databaseURL: 'https://footytips-dev.firebaseio.com',
-  storageBucket: 'footytips-dev.appspot.com',
-  messagingSenderId: '189591411481'
-} : {
-  apiKey: 'AIzaSyAF5pJIIeGCnKGM2GZKDga2DuJg2aeEp-4',
-  authDomain: 'footytips-dev.firebaseapp.com',
-  databaseURL: 'https://footytips-dev.firebaseio.com',
-  storageBucket: 'footytips-dev.appspot.com',
-  messagingSenderId: '189591411481'
-}
-
 
 try {
 
+  var config = {
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_DATABASE_URL,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID
+  };
+
   console.log("Firebase config:", config);
   firebase.initializeApp(config);
-
+  
 } catch (e) {
 
 }

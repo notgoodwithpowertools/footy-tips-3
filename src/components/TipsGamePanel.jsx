@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import Team from './Team.jsx';
+import GameInfo from './GameInfo.jsx';
 // import Image from './Image.jsx';
 import { getTeam } from '../api/team.js';
 import { setGameResult } from '../actions/game-actions.js';
@@ -62,7 +62,8 @@ export const TipsGamePanel = ({game, admin, games, tips, users}) => {
         <img className='tipsGameIcon' src={getTeam(game.home_team_id).img} alt={getTeam(game.home_team_id).img}></img>
       </div>
 
-      <div className='tipsDetails'><p>{game.venue}</p></div>
+      {/*<div className='tipsDetails'><p>{game.venue}</p></div> */}
+      <GameInfo venue={game.venue} datestamp={game.datestamp}/>
       <div className={'tipsTeamItem ' + awayTeamClass} onClick={() => {handleClick(game.away_team_id)}}>
         <img className='tipsGameIcon' src={getTeam(game.away_team_id).img} alt={getTeam(game.away_team_id).img}></img>
       </div>
